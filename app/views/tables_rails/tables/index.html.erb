@@ -1,0 +1,15 @@
+<h1>Listing tables</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Model</th>
+  </tr>
+
+<% @tables.each do |table| %>
+  <tr>
+    <td><%= table %></td>
+    <td><%= link_to table.camelize.singularize, table_url(table.camelize.singularize) %></td>
+  </tr>
+<% end %>
+</table>

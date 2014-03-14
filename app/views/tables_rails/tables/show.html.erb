@@ -1,0 +1,23 @@
+
+<table>
+  <tr>
+    <th>Column</th>
+    <th>type</th>
+    <th>type_sql</th>
+    <th>limit</th>
+    <th>null</th>
+    <th>default</th>
+    <th>human name </th>
+  </tr>
+  <% @table[:columns].each do |col| %>
+    <tr>
+      <td> <%= col.name %></td>
+      <td> <%= col.type %></td>
+      <td> <%= col.sql_type %></td>
+      <td> <%= col.limit %></td>
+      <td> <%= col.null %></td>
+      <td> <%= col.default %></td>
+      <td> <%= col.human_name %></td>
+    </tr>
+  <% end %>
+</table>
