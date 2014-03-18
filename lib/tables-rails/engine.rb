@@ -1,3 +1,5 @@
+require 'bootstrap-sass'
+
 module TablesRails
   class Engine < ::Rails::Engine
     isolate_namespace TablesRails
