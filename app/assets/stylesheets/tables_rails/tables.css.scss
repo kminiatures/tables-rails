@@ -1,0 +1,35 @@
+
+div.tables-show{
+  td.column-name{
+    max-width: 90px;
+  }
+  .CodeMirror {
+    border: 1px solid #eee;
+    height: auto;
+  }
+  .CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+  div#result{
+    padding: 8px ;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.4);
+    display: none;
+    position: absolute;
+    top: 300px;
+    background-color: white;
+    table{
+      th{
+        min-width: 40px;
+         word-break: break-all;
+      }
+      td{
+        max-width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}

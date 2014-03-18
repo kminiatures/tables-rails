@@ -18,3 +18,8 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+group :development do
+  gem "pry-rails"
+  gem "rack-livereload"
+  gem "guard-livereload"
+end

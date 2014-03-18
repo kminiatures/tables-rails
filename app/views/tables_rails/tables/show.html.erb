@@ -1,27 +1,48 @@
+<%= link_to 'Tables', tables_path %>
+<h1><%= @table_name %></h1>
+<div class="row tables-show">
+  <div class="col-md-7">
+    <table class="table table-condensed columns">
+      <tr>
+        <th><label><input type="checkbox"> * (all) </label></th>
+        <!-- th>type</th -->
+        <th>type_sql</th>
+        <!-- th>limit</th -->
+        <th>null</th>
+        <th>default</th>
+        <!-- th>human name </th -->
+      </tr>
+      <% @table[:columns].each do |col| %>
+        <tr>
+          <td class="column-name"><label><input type="checkbox" value="<%= col.name%>"> <%= col.name %></label></td>
+          <!--td class="type"><%= col.type %></td -->
+          <td class="sql-type"><%= col.sql_type %></td>
+          <!-- td class="limit"><%= col.limit %></td -->
+          <td class="null"><%= col.null %></td>
+          <td class="defualt"><%= col.default %></td>
+          <!-- td> <%= col.human_name %></td -->
+        </tr>
+      <% end %>
+    </table>
+  </div>
 
-<table>
-  <tr>
-    <th>Column</th>
-    <th>type</th>
-    <th>type_sql</th>
-    <th>limit</th>
-    <th>null</th>
-    <th>default</th>
-    <th>human name </th>
-  </tr>
-  <% @table[:columns].each do |col| %>
-    <tr>
-      <td> <%= col.name %></td>
-      <td> <%= col.type %></td>
-      <td> <%= col.sql_type %></td>
-      <td> <%= col.limit %></td>
-      <td> <%= col.null %></td>
-      <td> <%= col.default %></td>
-      <td> <%= col.human_name %></td>
-    </tr>
-  <% end %>
-</table>
+  <div class="col-md-5">
+    SELECT 
+    ←
+    FROM 
+    <span id="table-name"><%= @table_name.underscore.pluralize %></span>
+    WHERE
+    <textarea id="where" class="form-control where"></textarea>
+    ORDER BY <span id="order">id desc</span>
+    LIMIT <span id="limit">100</span>
 
-<div>
-  <textarea style="width:100px; height:100px;"></textarea>
+    <textarea id="sql" class="form-control sql"></textarea>
+
+    <div class="text-right">
+      <button class="btn btn-default call-sql-button">Execute</button>
+    </div>
+
+  </div>
+
+  <div id="result"></div>
 </div>

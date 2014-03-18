@@ -32,6 +32,8 @@ Gem::Specification.new do |s|
   # s.add_dependency 'twitter-bootstrap-rails'
   s.add_dependency 'font-awesome-sass-rails'
   s.add_dependency 'bootstrap-sass'
+  s.add_dependency 'codemirror-rails'
+
 
   # s.add_dependency 'chosen-rails'
   # s.add_dependency 'cleditor_rails'

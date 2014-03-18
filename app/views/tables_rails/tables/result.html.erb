@@ -1,0 +1,20 @@
+<div>
+  <button id="close-result-button" class="btn btn-default">Close</button>
+</div>
+<table class="table table-condensed table-bordered table-striped">
+  <% @records.each_with_index do |record, i| %>
+    <% if i == 0 %>
+      <tr>
+        <% record.each do |val| %>
+          <th><%=val[0]%></th>
+        <% end %>
+      </tr>
+    <% end %>
+
+    <tr>
+      <% record.each do |val| %>
+        <td title="<%=html_escape val[1]%>"><%=html_escape val[1]%></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

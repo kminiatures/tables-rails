@@ -1,4 +1,5 @@
 require 'bootstrap-sass'
+require 'codemirror-rails'
 
 module TablesRails
   class Engine < ::Rails::Engine

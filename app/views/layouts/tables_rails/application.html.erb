@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>TablesRails</title>
-
   <%= stylesheet_link_tag    "tables_rails/application", :media => "all" %>
   <%= javascript_include_tag "tables_rails/application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
