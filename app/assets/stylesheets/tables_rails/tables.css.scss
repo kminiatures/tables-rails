@@ -20,15 +20,24 @@ div.tables-show{
     top: 300px;
     background-color: white;
     table{
+      th,td{
+        word-break: break-all;
+      }
       th{
         min-width: 40px;
-         word-break: break-all;
       }
       td{
         max-width: 200px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+      }
+    }
+    table.all-open{
+      td{
+        white-space: normal;
+        overflow: auto;
+        min-width: 120px;
       }
     }
   }

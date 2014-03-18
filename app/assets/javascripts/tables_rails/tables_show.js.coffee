@@ -24,6 +24,13 @@ $ ->
       $('#result').delegate '#close-result-button', 'click', =>
         $('#result').fadeOut('first')
 
+      $('#smallize-column-button').click =>
+        console.log 'small'
+        $('#result table.result').removeClass 'all-open'
+
+      $('#open-column-button').click =>
+        console.log 'open'
+        $('#result table.result').addClass 'all-open'
 
       $('button.call-sql-button').click =>
         data = {sql: @build()}
