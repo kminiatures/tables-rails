@@ -1,6 +1,9 @@
 <div>
   <button id="close-result-button" class="btn btn-default">Close</button>
 </div>
+<pre>
+  <%= @sql %>
+</pre>
 <table class="table table-condensed table-bordered table-striped result">
   <% @records.each_with_index do |record, i| %>
     <% if i == 0 %>

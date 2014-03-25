@@ -13,8 +13,16 @@ module TablesRails
   
     def show
       @table = {}
-      @table_name = params['id']
-      @table[:columns] = Module.const_get(@table_name).columns
+      @model_name = params['id']
+      @table_name = @model_name.underscore.pluralize 
+      @table[:columns] = Module.const_get(@model_name).columns
+
+      begin
+        count_sql = "select count(*) from #{@table_name}"
+        @all_count = ActiveRecord::Base.connection.select(count_sql)[0]['count(*)']
+      rescue 
+        @all_count = "#{count_sql} で例外がおきました"
+      end
 
       respond_to do |format|
         format.html # show.html.erb

@@ -31,16 +31,23 @@
       <button type="button" id="smallize-column-button" class="btn btn-default">長いカラムを省略</button>
       <button type="button" id="open-column-button" class="btn btn-default">省略しない</button>
     </div>
+    <div>
+      全 <%= @all_count %> 行
+    </div>
 
-    SELECT 
-    ←
-    FROM 
-    <span id="table-name"><%= @table_name.underscore.pluralize %></span>
-    WHERE
-    <textarea id="where" class="form-control where"></textarea>
-    ORDER BY <span id="order">id desc</span>
-    LIMIT <span id="limit">100</span>
+    <h2>Where</h2>
+    <div>
+      SELECT 
+      *
+      FROM 
+      <span id="table-name"><%= @table_name %></span>
+      WHERE
+      <textarea id="where" class="form-control where"></textarea>
+      ORDER BY <span id="order">id desc</span>
+      LIMIT <span id="limit">100</span>
+    </div>
 
+    <h2>SQL</h2>
     <textarea id="sql" class="form-control sql"></textarea>
 
     <div class="text-right">

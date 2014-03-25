@@ -33,7 +33,7 @@ $ ->
         $('#result table.result').addClass 'all-open'
 
       $('button.call-sql-button').click =>
-        data = {sql: @build()}
+        data = {sql: @sql_editor.getValue()}
         $.ajax
           type: 'POST'
           url: 'result'

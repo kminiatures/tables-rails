@@ -7,5 +7,5 @@ guard 'livereload', apply_css_live: true do
   watch(%r{public/.+\.(css|js|html)})
   watch(%r{config/locales/.+\.yml})
   # Rails Assets Pipeline
-  watch(%r{(app|vendor)(/assets/\w+/(.+\.(scss|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
+  watch(%r{(app|vendor)(/assets/\w+/(.+\.(scss|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}".sub('.scss', '') }
 end
