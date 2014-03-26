@@ -7,6 +7,10 @@ $ ->
         mode: "text/x-mysql",
         matchBrackets: true,
         lineWrapping: true,
+        extraKeys: {
+          "Tab": false,      # Let focus go to next control
+          #"Shift-Tab": false # Let focus go to previous control
+        }
       }
 
       @sql_editor = CodeMirror.fromTextArea $('textarea#sql')[0], codemirror_opt

@@ -19,6 +19,7 @@ div.tables-show{
     position: absolute;
     top: 300px;
     background-color: white;
+    z-index: 100;
     table{
       th,td{
         word-break: break-all;
