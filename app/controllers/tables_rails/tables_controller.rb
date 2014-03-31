@@ -32,6 +32,7 @@ module TablesRails
 
     def result
       @sql = params['sql']
+      Log.new(sql: @sql).save
 
       @records = ActiveRecord::Base.connection.select(@sql)
 

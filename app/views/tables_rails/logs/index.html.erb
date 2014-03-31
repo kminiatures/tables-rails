@@ -1,0 +1,14 @@
+<h1>Listing logs</h1>
+
+<table class="table">
+  <tr>
+    <th>Created at
+    <th>SQL
+  </tr>
+<% @logs.each do|log| %>
+  <tr>
+    <td><%= log.created_at %>
+    <td class="sql"><%= log.sql %>
+  </tr>
+<% end %>
+</table>

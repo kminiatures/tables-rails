@@ -1,0 +1,6 @@
+development:
+  sessions:
+    default:
+      database: tables_rails_development
+      hosts:
+        - 127.0.0.1:27017

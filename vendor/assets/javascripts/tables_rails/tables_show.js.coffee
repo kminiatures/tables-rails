@@ -46,10 +46,29 @@ $ ->
             $('div#result').html(data).fadeIn()
           dataType: 'html'
 
-      @set_sql()
+      $('div#logs').delegate 'td.sql', 'click', (e)=>
+        @set_sql $(e.target).text()
 
-    set_sql: ->
-      @sql_editor.setValue @build()
+
+      @set_sql()
+      @logs()
+
+    set_sql: (val = '')->
+      @sql_editor.setValue(if val != '' then val else @build())
+
+    # paste_sql: ->
+      # @set_sq
+
+    logs: ->
+      console.log 'call logs'
+      data = {}
+      $.ajax
+        type: 'GET'
+        url: '../logs'
+        data: data
+        success: (data)->
+          $('div#logs').html(data).fadeIn()
+        dataType: 'html'
 
     build: ->
       col_arr = []
